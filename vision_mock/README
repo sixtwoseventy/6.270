@@ -1,0 +1,25 @@
+Instructions to run the vision system in the mock competition.
+Detects fiducial patterns (available in /vision/resources).Requires OpenCV to be installed.  See http://opencv.willowgarage.com/wiki/InstallGuide%20%3A%20Debian for details on building OpenCV for Ubuntu/Debian.  Those instructions are slightly out of date, so you'll have to change some of the package names to get them to install correctly.  After running "make install" I also had to run "export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH" to get it to work, your mileage may vary.
+
+1) plug in transmitter happy board
+2) turn on happyboard and hit go after the comm light blinks (it should turn on steady after)
+3) open terminal. Type "cd 6.270/vision_p" and hit tab, then enter 
+4) type "./run_vision 0 /dev/ttyUSB0 A   //runs a script to run the Makefile and set camera to proper light/color levels. run_vision takes three arguments: camera number, serial port, and table letter
+ 
+ 
+Keyboard shortcuts once vision is runnning:
+r – starts a round, and can be hit mid-round to reset timer to 1 minute
+! – ends a round and shuts down the competing robot (useful for runaways)
+R – ends a  round without shutting down the robot
+p – switches between camera view and playing field view, make sure there aren’t stray fiducials in the camera view as they will be recognized
+i – in camera view, this allows selecting the playing field corners to recalibrate.  Hit i, then, starting with the upper left corner, click each corner going clockwise
+i: Map projection Corners
+r: Start/Restart a Round
+!: End Match
+s: pick sample corners???
++: Zoom In
+-: Zoom Out
+E: Exclude Corners
+f: Show fps
+z: Pause / photo finish
+spacebar: filter squares

@@ -1,0 +1,18 @@
+Three serial ports:
+1) rfmon - reads rf input upon carriage return.
+    Possible cases of input:
+       * Round start
+       * Round end
+       * Robots states, including which robot the info is about, this
+robot's id, x and y coordinates, angle, score
+       * Territory states, including which territory this info is about,
+the territory's owner, balls remaining, rate limit
+2) ledCtrl - writes output - the RGB values for the six LED's.
+3) drainCounter - idle (declared in the code, but never used again)
+
+Besides having these two functional serial ports that read/write
+information, the code also updates the states of robots and the territories
+based on the input information, and computes the LED RGB values based on
+the states of information. It also draws robots, the field, LED boxes,
+balls, etc. for visualization purposes.
+

@@ -1,0 +1,236 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BAUD	serial.c	8;"	d	file:
+BL	vision.h	63;"	d
+BR	vision.h	62;"	d
+CALIBRATE_OBJS	Makefile	/^CALIBRATE_OBJS = calibrate.o$/;"	m
+CC	Makefile	/^CC = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -std=c99 $(DEBUG)$/;"	m
+CIRCLEDETECT_OBJS	Makefile	/^CIRCLEDETECT_OBJS = circledetect.o$/;"	m
+CV_NO_BACKWARD_COMPATIBILITY	calibrate.cc	1;"	d	file:
+CV_NO_BACKWARD_COMPATIBILITY	test.c	32;"	d	file:
+CV_NO_BACKWARD_COMPATIBILITY	vision.h	30;"	d
+CXX	Makefile	/^CXX = g++$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS = $(DEBUG)$/;"	m
+FOOT	game.h	16;"	d
+GOALS_H	goals.h	2;"	d
+GOAL_TOLERANCE	game.h	18;"	d
+HAMMING_DECODE	table.h	10;"	d
+HEADERS	Makefile	/^HEADERS = vision.h projection.h serial.h util.h game.h packet.h table.h goals.h$/;"	m
+LIBS	Makefile	/^LIBS=-lm -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_video -lopencv_calib3d$/;"	m
+LOCATION	Makefile	/^LOCATION=\/usr$/;"	m
+LOCATION	Makefile	/^LOCATION=\/usr\/local$/;"	m
+MAKE	Makefile	/^MAKE = make$/;"	m
+MATCH_ENDED	game.h	6;"	d
+MATCH_LEN_SECONDS	game.h	4;"	d
+MATCH_RUNNING	game.h	7;"	d
+MAX_ROBOT_ID	game.h	20;"	d
+M_PI	vision.h	66;"	d
+NUM_OBJECTS	vision.c	13;"	d	file:
+OUTPUTS	Makefile	/^OUTPUTS = vision calibrate circledetect$/;"	m
+PAYLOAD_SIZE	packet.h	11;"	d
+PICK_EXCLUDE_CORNERS	vision.c	/^    PICK_EXCLUDE_CORNERS$/;"	e	enum:__anon5	file:
+PICK_PROJECTION_CORNERS	vision.c	/^    PICK_PROJECTION_CORNERS,$/;"	e	enum:__anon5	file:
+PICK_SAMPLE_CORNERS	vision.c	/^    PICK_SAMPLE_CORNERS,$/;"	e	enum:__anon5	file:
+POSITION	packet.h	/^    POSITION, \/\/Updated position of this bot, other bot, or mouse$/;"	e	enum:__anon3
+REPLY_STRING	packet.h	/^    REPLY_STRING \/\/String from board to bot$/;"	e	enum:__anon3
+RM	Makefile	/^RM = rm$/;"	m
+SHOW_FILTERED_OUTPUT	vision.c	29;"	d	file:
+START	packet.h	/^    START, \/\/Start of the round$/;"	e	enum:__anon3
+STOP	packet.h	/^    STOP, \/\/End of the round$/;"	e	enum:__anon3
+STRING	packet.h	/^    STRING, \/\/String from bot to board$/;"	e	enum:__anon3
+TL	vision.h	60;"	d
+TR	vision.h	61;"	d
+TRK_BALL_THRESHOLD	vision.c	/^const char *TRK_BALL_THRESHOLD = "Ball brightness threshold";$/;"	v
+TRK_CANNY_THRESHOLD	vision.c	/^const char *TRK_CANNY_THRESHOLD = "Canny upper threshold";$/;"	v
+TRK_HOUGH_VOTES	vision.c	/^const char *TRK_HOUGH_VOTES = "Minimum Hough votes";$/;"	v
+TRK_MAX_AREA	vision.c	/^const char *TRK_MAX_AREA = "Max square area";$/;"	v
+TRK_MAX_BALL_DIM	vision.c	/^const char *TRK_MAX_BALL_DIM = "Max ball dimension";$/;"	v
+TRK_MIN_AREA	vision.c	/^const char *TRK_MIN_AREA = "Min square area";$/;"	v
+TRK_MIN_BALL_DIM	vision.c	/^const char *TRK_MIN_BALL_DIM = "Min ball dimension";$/;"	v
+TRK_THRESHOLD	vision.c	/^const char *TRK_THRESHOLD = "Threshold";$/;"	v
+TRK_TOLERANCE	vision.c	/^const char *TRK_TOLERANCE = "Side length tolerance";$/;"	v
+UNAME	Makefile	/^UNAME := $(shell uname)$/;"	m
+VISION_OBJS	Makefile	/^VISION_OBJS = $(VISION_SOURCES:.c=.o)$/;"	m
+VISION_SOURCES	Makefile	/^VISION_SOURCES = projection.c serial.c goals.c vision.c util.c table.c$/;"	m
+WND_CONTROLS	vision.c	/^const char *WND_CONTROLS = "Controls";$/;"	v
+WND_FILTERED	vision.c	/^const char *WND_FILTERED = "Filtered Video";$/;"	v
+WND_FILTERED_SQUARES	vision.c	/^const char *WND_FILTERED_SQUARES = "Square Detection";$/;"	v
+WND_MAIN	vision.c	/^const char *WND_MAIN = "6.270 Vision System";$/;"	v
+X_MAX	game.h	11;"	d
+X_MIN	game.h	10;"	d
+Y_MAX	game.h	14;"	d
+Y_MIN	game.h	13;"	d
+_GAME_H_INC_	game.h	2;"	d
+_PACKET_H_	packet.h	2;"	d
+_TABLE_H_INC_	table.h	2;"	d
+_UTIL_H_INC_	util.h	2;"	d
+_VISION_H_INC_	vision.h	28;"	d
+__PROJECTION_H__	projection.h	2;"	d
+__SERIAL_H__	serial.h	2;"	d
+ball_threshold	vision.c	/^int ball_threshold = 90;$/;"	v
+boardLetter	vision.c	/^char boardLetter = '*';$/;"	v
+board_dt	calibrate.cc	/^const int board_dt = 20;$/;"	v
+board_h	calibrate.cc	/^int board_h;$/;"	v
+board_w	calibrate.cc	/^int board_w;$/;"	v
+boundedRandom	util.c	/^int boundedRandom(int min, int max) {$/;"	f
+bounds	vision.c	/^float bounds[4] = {-1024, 1024, -1773, 1773};$/;"	v
+c	debug.py	/^    c = f.read(1)$/;"	v
+canny_threshold	vision.c	/^int canny_threshold = 20;$/;"	v
+capture	vision.c	/^CvCapture *capture;$/;"	v
+centeredFitTitleText	vision.c	/^void centeredFitTitleText(IplImage *out, CvScalar color, float y, float w, char *buf) {$/;"	f
+checkGoals	goals.c	/^void checkGoals(int x, int y){$/;"	f
+clamp	util.c	/^int clamp(int x, int low, int high) {$/;"	f
+cleanupCV	vision.c	/^void cleanupCV() {$/;"	f
+cleanupSerial	vision.c	/^void cleanupSerial() {$/;"	f
+cleanupUI	vision.c	/^void cleanupUI() {$/;"	f
+compareDists	ball_tracking.c	/^int compareDists(const void *a, const void *b){$/;"	f
+compareDists	vision.c	/^int compareDists(const void *a, const void *b){$/;"	f
+computeDisplayMatrix	vision.c	/^void computeDisplayMatrix() {$/;"	f
+corners	vision.h	/^    CvPoint2D32f corners[4];$/;"	m	struct:__anon7
+cosAngle	util.c	/^double cosAngle( CvPoint *pt1, CvPoint *pt2, CvPoint *pt0 ) {$/;"	f
+coviM	vision.c	/^CvMat *coviM = 0, *muM = 0;$/;"	v
+curIdx	ball_tracking.c	/^    int curIdx;$/;"	m	struct:__anon9	file:
+curIdx	vision.c	/^    int curIdx;$/;"	m	struct:__anon6	file:
+cvPrintf	hsl.c	/^int cvPrintf(IplImage *img, CvPoint pt, CvScalar color, const char *format, ...) {$/;"	f
+cvPrintf	vision.c	/^int cvPrintf(IplImage *img, CvFont *font, CvPoint pt, CvScalar color, const char *format, ...) {$/;"	f
+displayHeight	vision.c	/^const float displayWidth = 1024, displayHeight = 768;$/;"	v
+displayMatrix	vision.c	/^CvMat *displayMatrix = 0; \/\/ maps from physical coords to display coords$/;"	v
+displayWidth	vision.c	/^const float displayWidth = 1024, displayHeight = 768;$/;"	v
+dist_sq	util.c	/^double dist_sq(CvPoint a, CvPoint b) {$/;"	f
+distance	ball_tracking.c	/^    double distance;$/;"	m	struct:__anon9	file:
+distance	vision.c	/^    double distance;$/;"	m	struct:__anon6	file:
+drawCallout	vision.c	/^void drawCallout(IplImage *out, float cx, float cy, float radius, int id) {$/;"	f
+drawChevron	vision.c	/^void drawChevron(IplImage *out, float theta, float alpha, float dtheta, float t, int big, float cx, float cy, float radius) {$/;"	f
+drawHexCorners	vision.c	/^void drawHexCorners(IplImage *out) {$/;"	f
+drawSquare	vision.c	/^void drawSquare(IplImage *out, IplImage *gray, CvPoint pt[4], CvPoint2D32f bit_pt_true[16], int id, CvPoint2D32f orientationHandle, float theta) {$/;"	f
+estimateReticleParams	vision.c	/^void estimateReticleParams(CvMat *H, float *cx, float *cy, float *radius, float *theta) {$/;"	f
+excludeCorners	vision.c	/^CvPoint2D32f excludeCorners[10][4];$/;"	v
+f	debug.py	/^f  = open("tx", "r")$/;"	v
+fd_pf	vision.c	/^int fd_pf; \/\/ file descriptor of playing field happyboard serial$/;"	v
+fd_tx	vision.c	/^int fd_tx; \/\/ file descriptor of TX happyboard serial$/;"	v
+fiducial_t	vision.h	/^} fiducial_t;$/;"	t	typeref:struct:__anon7
+filter_image	vision.c	/^IplImage *filter_image( IplImage *img ) {$/;"	f
+findCandidateSquares	vision.c	/^CvSeq *findCandidateSquares(IplImage *tgray) {$/;"	f
+font	hsl.c	/^CvFont font;$/;"	v
+font	vision.c	/^CvFont font, titleFonts[4], hudFont;$/;"	v
+frameHeight	vision.c	/^float frameWidth, frameHeight;$/;"	v
+frameWidth	vision.c	/^float frameWidth, frameHeight;$/;"	v
+gameData	vision.c	/^game_data gameData;$/;"	v
+getBitSamplingTransform	vision.c	/^void getBitSamplingTransform(CvPoint pt[4], CvMat **H) {$/;"	f
+getCenterFromBits	vision.c	/^void getCenterFromBits(CvPoint2D32f bit_pt_true[16], CvPoint2D32f *trueCenter) {$/;"	f
+getGoal	goals.c	/^CvPoint getGoal() {$/;"	f
+getIDFromBits	vision.c	/^int getIDFromBits(int bit_true[16], int *id) {$/;"	f
+getObjectDistance	ball_tracking.c	/^double getObjectDistance(board_coord a, board_coord b){$/;"	f
+getObjectDistance	vision.c	/^double getObjectDistance(board_coord a, board_coord b){$/;"	f
+getOrientationFromBits	vision.c	/^int getOrientationFromBits(int bit_raw[16], int *orientation) {$/;"	f
+getScore	goals.c	/^int getScore() {$/;"	f
+getThetaFromAffine	vision.c	/^float getThetaFromAffine(CvPoint2D32f bit_pt_true[16]) {$/;"	f
+getThetaFromExtension	vision.c	/^float getThetaFromExtension(CvPoint2D32f bit_pt_true[16], CvPoint2D32f trueCenter) {$/;"	f
+get_5pixel_avg	util.c	/^int get_5pixel_avg(IplImage *img, int x, int y) {$/;"	f
+goal	goals.c	/^static CvPoint goal;$/;"	v	file:
+hamming_codes	table.c	/^uint16_t hamming_codes[65536] = {$/;"	v
+handleKeypresses	vision.c	/^int handleKeypresses() {$/;"	f
+hasStarted	vision.c	/^int hasStarted = 0;$/;"	v
+hough_votes	vision.c	/^int hough_votes = 80;$/;"	v
+hudFont	vision.c	/^CvFont font, titleFonts[4], hudFont;$/;"	v
+id	vision.h	/^    int id;$/;"	m	struct:__anon8
+img	test.c	/^IplImage* img = 0;$/;"	v
+initCV	vision.c	/^int initCV(char *source) {$/;"	f
+initGame	vision.c	/^int initGame() {$/;"	f
+initSerial	vision.c	/^int initSerial(const char *device, const char *playing_field_device) {$/;"	f
+initUI	vision.c	/^int initUI() {$/;"	f
+invProjection	vision.c	/^CvMat *invProjection = 0; \/\/ maps from physical coords to frame coords$/;"	v
+main	calibrate.cc	/^int main() {$/;"	f
+main	circledetect.c	/^int main (int argc, char** argv ) {$/;"	f
+main	hsl.c	/^int main (int argc, char** argv ) {$/;"	f
+main	test.c	/^int main(int argc, char** argv)$/;"	f
+main	vision.c	/^int main(int argc, char** argv) {$/;"	f
+matchObjects	ball_tracking.c	/^void matchObjects(board_coord previousObjects[NUM_OBJECTS], board_coord currentObjects[NUM_OBJECTS]){$/;"	f
+matchStartTime	vision.c	/^double matchStartTime;$/;"	v
+matchState	vision.c	/^int matchState = MATCH_ENDED;$/;"	v
+max_area	vision.c	/^int max_area = 5800; \/\/ will be corrected for resolution$/;"	v
+max_ball_dim	vision.c	/^int max_ball_dim = 16;$/;"	v
+min_area	vision.c	/^int min_area = 800; \/\/ ~ square of (fraction of frame width in 1\/1000s)$/;"	v
+min_ball_dim	vision.c	/^int min_ball_dim = 6;$/;"	v
+mouseCornerLabel	vision.c	/^const char *mouseCornerLabel[] = {"TOP LEFT", "TOP RIGHT", "BOTTOM RIGHT", "BOTTOM LEFT"};$/;"	v
+mouseHandler	vision.c	/^void mouseHandler(int event, int x, int y, int flags, void *param) {$/;"	f
+mouseOperation	vision.c	/^} mouseOperation = PICK_PROJECTION_CORNERS;$/;"	v	typeref:enum:__anon5
+mouseOperationLabel	vision.c	/^const char *mouseOperationLabel[] = {"Init Projection", "Sample Colors", "Exclude Quad"};$/;"	v
+muM	vision.c	/^CvMat *coviM = 0, *muM = 0;$/;"	v
+music	vision.c	/^void music() {$/;"	f
+music_fade	vision.c	/^void music_fade() {$/;"	f
+music_off	vision.c	/^void music_off() {$/;"	f
+n_boards	calibrate.cc	/^int n_boards = 0;$/;"	v
+nextExclude	vision.c	/^int nextExclude = 0;$/;"	v
+nextMousePoint	vision.c	/^int nextMousePoint = 4;$/;"	v
+obj_dist	ball_tracking.c	/^} obj_dist;$/;"	t	typeref:struct:__anon9	file:
+obj_dist	vision.c	/^} obj_dist;$/;"	t	typeref:struct:__anon6	file:
+os	debug.py	/^import os$/;"	i
+owner	packet.h	/^    unsigned owner : 5;$/;"	m	struct:__anon4
+packet_type	packet.h	/^} packet_type;$/;"	v	typeref:enum:__anon3
+pickNewGoal	goals.c	/^void pickNewGoal(){$/;"	f
+preserveValues	vision.c	/^void preserveValues(int id) {$/;"	f
+prevIdx	ball_tracking.c	/^    int prevIdx;$/;"	m	struct:__anon9	file:
+prevIdx	vision.c	/^    int prevIdx;$/;"	m	struct:__anon6	file:
+processBalls	ball_tracking.c	/^void processBalls(IplImage *img, IplImage *gray, IplImage *out){$/;"	f
+processRobotDetection	vision.c	/^void processRobotDetection(CvPoint2D32f trueCenter, float theta, int id, CvPoint2D32f *orientationHandle) {$/;"	f
+processSquares	vision.c	/^void processSquares( IplImage *img, IplImage *out, IplImage *grayscale, CvSeq *squares ) {$/;"	f
+project	projection.c	/^CvPoint2D32f project(CvMat *projection, CvPoint2D32f point){$/;"	f
+projection	vision.c	/^CvMat *projection = 0; \/\/ maps from frame coords to physical coords$/;"	v
+projectionPoints	vision.c	/^CvPoint2D32f projectionPoints[4];$/;"	v
+projection_init	projection.c	/^void projection_init(CvMat **projection, CvMat **invProjection, CvPoint2D32f points[4], float bounds[4]) {$/;"	f
+randomGoalSeed	vision.c	/^int randomGoalSeed = 18022;$/;"	v
+rate_limit	packet.h	/^    unsigned rate_limit : 7;$/;"	m	struct:__anon4
+readPattern	vision.c	/^int readPattern(IplImage *img, CvPoint pt[4], CvPoint2D32f bit_pt_true[16], int *id) {$/;"	f
+remaining	packet.h	/^    unsigned remaining : 4;$/;"	m	struct:__anon4
+reseedRandom	goals.c	/^void reseedRandom(int seed){$/;"	f
+resetRound	goals.c	/^void resetRound(int randomSeed) {$/;"	f
+resetScore	goals.c	/^void resetScore(){$/;"	f
+robot_t	vision.h	/^} robot_t;$/;"	t	typeref:struct:__anon8
+robots	vision.c	/^board_coord robots[MAX_ROBOT_ID+1];$/;"	v
+rotateBitsToOrientation	vision.c	/^void rotateBitsToOrientation(CvPoint2D32f bit_pt_raw[16], int bit_raw[16], int orientation, CvPoint2D32f bit_pt_true[16], int bit_true[16]) {$/;"	f
+runPlayingFieldSerial	vision.c	/^void *runPlayingFieldSerial(void *params) {$/;"	f
+runSerial	vision.c	/^void *runSerial(void *params){$/;"	f
+sampleColorModel	vision.c	/^void sampleColorModel(IplImage *img) {$/;"	f
+sampleColors	vision.c	/^int sampleColors = 0;$/;"	v
+sampleCorners	vision.c	/^CvPoint2D32f sampleCorners[4];$/;"	v
+saveExclusions	vision.c	/^void saveExclusions() {$/;"	f
+score	goals.c	/^static int score = 0;$/;"	v	file:
+scores	vision.c	/^int scores[MAX_ROBOT_ID+1];$/;"	v
+sendPositionPacket	vision.c	/^volatile int sendPositionPacket = 0;$/;"	v
+sendPositions	vision.c	/^void sendPositions(game_data gdata) {$/;"	f
+sendStartPacket	vision.c	/^volatile int sendStartPacket = 0; \/\/ flag to have a start packet sent ASAP$/;"	v
+sendStartStopCommand	vision.c	/^void sendStartStopCommand(int command, int id_a, int id_b) {$/;"	f
+sendStopPacket	vision.c	/^volatile int sendStopPacket = 0;$/;"	v
+serialGameData	vision.c	/^game_data serialGameData;$/;"	v
+serial_close	serial.c	/^void serial_close(int fd){$/;"	f
+serial_condition	vision.c	/^pthread_cond_t serial_condition = PTHREAD_COND_INITIALIZER;$/;"	v
+serial_lock	vision.c	/^pthread_mutex_t serial_lock = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+serial_open	serial.c	/^int serial_open(const char *device){$/;"	f
+serial_send_packet	serial.c	/^void serial_send_packet(int fd, packet_buffer* packet){$/;"	f
+serial_sync	serial.c	/^void serial_sync(int fd){$/;"	f
+showFPS	vision.c	/^int warpDisplay = 0, showFPS = 0;$/;"	v
+showFilteredSquares	vision.c	/^bool showFilteredSquares = 0;$/;"	v
+showPhotoFinish	vision.c	/^int showPhotoFinish = 0;$/;"	v
+side_tolerance	vision.c	/^int side_tolerance = 50;$/;"	v
+sightings	vision.c	/^int sightings[MAX_ROBOT_ID+1];$/;"	v
+storage	vision.c	/^CvMemStorage *storage;$/;"	v
+symmInvSqrt	vision.c	/^CvMat *symmInvSqrt(CvMat *M) {$/;"	f
+teams	vision.c	/^char *teams[MAX_ROBOT_ID+1];$/;"	v
+territory_data	packet.h	/^} __attribute__ ((aligned (1))) __attribute__ ((packed)) territory_data;$/;"	t	typeref:struct:__anon4
+theta	vision.h	/^    signed theta : 12;$/;"	m	struct:__anon8
+thisBoard	vision.c	/^int thisBoard = 0;$/;"	v
+threshold	vision.c	/^int threshold = 100;$/;"	v
+timeNow	util.c	/^double timeNow() {$/;"	f
+titleFonts	vision.c	/^CvFont font, titleFonts[4], hudFont;$/;"	v
+updateGame	vision.c	/^void updateGame() {$/;"	f
+updateHUD	vision.c	/^void updateHUD(IplImage *out) {$/;"	f
+warpDisplay	vision.c	/^int warpDisplay = 0, showFPS = 0;$/;"	v
+wndname	test.c	/^const char* wndname = "6.270 Vision System";$/;"	v
+x	vision.h	/^    signed x : 12;$/;"	m	struct:__anon8
+y	vision.h	/^    signed y : 12;$/;"	m	struct:__anon8

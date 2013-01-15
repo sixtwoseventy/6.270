@@ -1,0 +1,3 @@
+The _6_270_led folder has the processing code that takes in an rf package about the state of robots, territories, and the game, and send out command to the LED's on the field and the synchronous display board. 
+
+The vision folder sets up the vision system for the real competition, and the vision_mock sets up the vision system for the mock competition - having the robot moving to a randomly generated point on the field. 
