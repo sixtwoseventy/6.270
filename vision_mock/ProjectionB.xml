@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<ProjectionB type_id="opencv-matrix">
+  <rows>4</rows>
+  <cols>1</cols>
+  <dt>"2f"</dt>
+  <data>
+    442. 443. 204. 443. 204. 42. 434. 38.</data></ProjectionB>
+</opencv_storage>
