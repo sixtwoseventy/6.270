@@ -28,6 +28,7 @@ pthread_mutex_t serial_lock = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t serial_condition = PTHREAD_COND_INITIALIZER;
 int sightings[MAX_ROBOT_ID+1];
 board_coord robots[MAX_ROBOT_ID+1];
+int *lastSeen[6]={0};
 
 // For a square playing field, these would be X_MIN, X_MAX, etc,
 // but since this is hexagonal, we use different (interior) points
@@ -79,7 +80,6 @@ float frameWidth, frameHeight;
 const float displayWidth = 1024, displayHeight = 768; 
 
 int fd_tx; // file descriptor of TX happyboard serial
-int fd_pf; // file descriptor of playing field happyboard serial
 
 FILE *urandom;
 
@@ -685,10 +685,9 @@ void processRobotDetection(CvPoint2D32f trueCenter, float theta, int id, CvPoint
     robots[id].x = x;
     robots[id].y = y;
     robots[id].theta = t; //change theta from +/- PI to +/-2048 (signed 12 bit int)
-    
 
-    if (0)
-        printf("X: %04i, Y: %04i, theta: %04i, theta_act: %f, proj_x:%f, proj_y:%f \n", x, y, t, theta, orientationHandle->x, orientationHandle->y);
+//if (0)
+// printf("X: %04i, Y: %04i, theta: %04i, theta_act: %f, proj_x:%f, proj_y:%f \n", x, y, t, theta, orientationHandle->x, orientationHandle->y);
 }
 
 void centeredFitTitleText(IplImage *out, CvScalar color, float y, float w, char *buf) {
@@ -718,6 +717,50 @@ void drawHexCorners(IplImage *out) {
     }
 }
 */
+
+
+/*
+//*****************************************************
+//start dual camera action
+//*************************************************
+
+
+int dualInit(){
+
+int ncams = cvcamGetCamerasCount( );
+int* out; 
+int nselected = cvcamSelectCamera(&out);
+
+int cam1 = out[0];
+int cam2 = out[1];
+
+cvcamSetProperty(cam1, CVCAM_PROP_ENABLE, CVCAMTRUE);
+cvcamSetProperty(cam1, CVCAM_PROP_RENDER, CVCAMTRUE);  //We'll render stream from this source
+cvNamedWindow("Cam1", 1);
+cvcamWindow MyWin1 = (cvcamWindow)cvGetWindowHandle("Cam1");
+cvcamSetProperty(cam1, CVCAM_PROP_WINDOW, &MyWin1);   // Selects a window for  video rendering
+
+//Same code for camera 2
+cvcamSetProperty(cam2, CVCAM_PROP_ENABLE, CVCAMTRUE);
+cvcamSetProperty(cam2, CVCAM_PROP_RENDER, CVCAMTRUE);
+cvNamedWindow("Cam2", 1);
+cvcamWindow MyWin2 = (cvcamWindow)cvGetWindowHandle("Cam2");
+cvcamSetProperty(cam2, CVCAM_PROP_WINDOW, &MyWin1);
+
+cvcamSetProperty(cam1, CVCAM_STEREO_CALLBACK , stereocallback); //stereocallback is the function running to process every frames
+
+cvcamInit();
+cvcamStart();
+
+}
+
+void stereocallback(IplImage* image1, IplImage* image2) {
+
+     
+} 
+*/
+
+
 void updateHUD(IplImage *out) {
     static double last_frame = 0.0;
     static float last_fps = 0.0;
@@ -837,8 +880,27 @@ void sendStartStopCommand(int command, int id_a, int id_b) {
     packet.type = command;
     packet.payload.array[0] = id_a;
     packet.payload.array[1] = id_b;
+serial_send_packet(fd_tx, &packet);
+//now for last seen
+packet.type = command;
+    packet.payload.array[0] = lastSeen[0];
+    packet.payload.array[1] = lastSeen[1];
+serial_send_packet(fd_tx, &packet);
 
-    serial_send_packet(fd_tx, &packet);
+//now for last seen 2
+packet.type = command;
+    packet.payload.array[0] = lastSeen[2];
+    packet.payload.array[1] = lastSeen[3];
+serial_send_packet(fd_tx, &packet);
+
+//now for last seen 3
+packet.type = command;
+    packet.payload.array[0] = lastSeen[4];
+    packet.payload.array[1] = lastSeen[5];
+serial_send_packet(fd_tx, &packet);
+
+
+
     printf("%s: %i, %i\n", command == START ? "start" : "stop", id_a, id_b);
 }
 
@@ -1037,6 +1099,7 @@ int handleKeypresses() {
         hasStarted = 0;
         matchStartTime = timeNow()+2.0; //set the match start time
         matchState = MATCH_RUNNING;
+         gameData.coords[1].score = 0;
         for (int i = 0; i < 6; i++) {
             gameData.territories[i].owner = 0;
             gameData.territories[i].remaining = 10;
@@ -1403,7 +1466,11 @@ int main(int argc, char** argv) {
                 id_b = i;
             }
         }
-        gameData.coords[0] = robots[id_a];//mark the best mathed robot
+        gameData.coords[0] = robots[id_a];//mark the best matched robot
+        for(int i = 4; i>-1; i--){
+            lastSeen[i+1] = lastSeen[i];
+        }
+        lastSeen[0] = gameData.coords[0].id;
         //gameData.coords[1] = robots[id_b];
         //
         //now lets add the target point gameplay!
