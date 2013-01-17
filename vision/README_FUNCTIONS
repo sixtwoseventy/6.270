@@ -1,0 +1,52 @@
+//this file should provide some helpful function summaries of the big 
+    players in the vision file
+
+    +/-4096 x, y
+    +/-2048 theta
+
+line 197: getObjectDistance
+
+line 210: compareDists
+
+line 654: processRobotDetection  //stores id, coordinates, orientation, increments 
+                sightings, stores score from the board robot
+
+line 701: updateHUD  //draws a lot, nothing too critical but the hud and the 
+                traffic light
+
+line 794: processSquares //runs through all found squares, getting fiducial id 
+                and orientation, then runs processRobotDetection
+
+line 827: sendStartStopCommand
+
+line 838:  sendPositions
+
+line 879:  runPlayingFieldSerial  //handles getting the incoming data 
+                from the playing field
+
+line 849: runSerial  //starts the rf communications and handles 
+                start/stop decrements start/stop,pos flags
+
+line 951: initSerial  //opens the ports and starts the threads of 
+                playing field and rf serial handlers 
+
+line 1101: handleKeyPresses  //self explanatory
+
+line 1174: updateGame  //not sure if used, seems to control the runonce 
+                behavior of sending start and stop
+
+line 1275:  main //runs initSerial(), initUI(), initCV(), initGame()
+                resets sightings[], teams[], then copies teams.tsv 
+                to teams[].  Then it hits the main loop.  Grabs a camera frame,
+                processes it, some warping, some loading of images.  then converts 
+                camera image to grayscale, and runs findCandidateSquares() 
+                to find things like fiducial squares, then processSquares() 
+                to detect and interpret the fiducials.  At 1420, 
+                I think it sets a sync byte in robots[0].id as 0xAA
+                then processes each robots sightings[i] count to figure 
+                out the top two "most seen" robots and assume that both 
+                are on the field  (unless sightings[] is 0 for all or
+                all but one of the robots, then it only does the appropriate
+                match or nothing).  It stores the (one indexed since robot[0]
+                is the sync bit) robot[id] into gameData.coords[0] and [1]
+                It updateHUD(), handleKeypresses(), updateGame()
